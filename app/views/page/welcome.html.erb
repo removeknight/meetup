@@ -1,0 +1,14 @@
+
+<div class="home-banner" data-stretch="<%= image_url "yellow.jpg" %>">
+	<div class="banner-inner container clearfix">
+		<h1> It's Paryt Time!</h1>
+		<p class="subheading">随便聚聚</p>
+		<div class="home-banner-links">
+			<%= link_to "发布新活动", "/issues/new",class: "banner-btn btn" %>
+		</div>
+	</div>
+</div>
+  <%= render partial: 'issue_list' %>
+<script>
+  $('.home-banner').anystretch();
+</script>
