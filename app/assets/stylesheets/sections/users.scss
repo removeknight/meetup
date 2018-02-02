@@ -1,4 +1,4 @@
-.signup-form-container, .login-form-container{
+signup-form-container, .login-form-container{
   width: 670px;
   margin: 50px auto;
   border:1px solid #ddd;
@@ -10,13 +10,5 @@
     padding: 13px;
     margin-top: 15px;
     width: 100%;
-  }
-}
-.remember-me {
-  * {
-    width: auto;
-  }
-  #remember_me {
-    margin-left: 0;
   }
 }

@@ -11,7 +11,7 @@ set :repo_url, "git@github.com:removeknight/meetup.git"
 set :deploy_to, "/home/zhao/meetup"
 append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
-
+set :passenger_restart_with_touch, true
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

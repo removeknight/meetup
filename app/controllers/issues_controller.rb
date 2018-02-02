@@ -15,7 +15,9 @@ class IssuesController < ApplicationController
   end
 
   def create
-  	Issue.create issue_params
+  	issue = Issue.new issue_params
+    issue.user_id = current_user.id
+    issue.save
   	redirect_to :root
   end
 
@@ -31,6 +33,6 @@ class IssuesController < ApplicationController
 
   private
   	def issue_params
-  		params.require(:issue).permit(:title, :content)
+  		params.require(:issue).permit(:title, :content, :user_id)
   	end
 end
