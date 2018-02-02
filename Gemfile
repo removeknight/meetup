@@ -24,6 +24,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'carrierwave'
 gem 'mini_magick'
 
+# @ somebody
+gem 'jquery-atwho-rails'
+
+# markdown
+gem 'redcarpet'
+
 
 
 # Use CoffeeScript for .coffee assets and views

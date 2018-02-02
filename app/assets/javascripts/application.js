@@ -14,4 +14,5 @@
 //= require jquery
 //= require jquery.anystretch.min
 //= require turbolinks
+//= require jquery.atwho
 //= require_tree .

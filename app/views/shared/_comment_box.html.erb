@@ -10,3 +10,13 @@
   <% end %>
   </div>
 </article>
+
+<script>
+  var commenter_list = [];
+  $('.reply .name a').each( function() {
+    if($.inArray($(this).text(), commenter_list) < 0 ){
+      commenter_list.push($(this).text());
+    }
+  });
+  $('textarea').atwho({at: "@", 'data':commenter_list});
+</script>
