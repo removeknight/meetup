@@ -2,7 +2,7 @@
   <div class="avatar">
       <img src=<%= current_user.avatar %> alt="" class="image-circle">  </div>
   <div class="body">
-  <%= form_for(Comment.new(:issue_id => @issue.id, :user_id => current_user.id)) do |f|  %>
+  <%= form_for(Comment.new(:issue_id => @issue.id, :user_id => current_user.id), remote: true) do |f|  %>
     <%= f.text_area(:content) %>
     <%= f.hidden_field :issue_id %>
     <%= f.hidden_field :user_id  %>
