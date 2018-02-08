@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <title>meetup</title>
   <%= stylesheet_link_tag "application"%>
-  <!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
   <%= javascript_include_tag "application"%>
   <%= csrf_meta_tags %>
   <script>
@@ -24,12 +23,11 @@
         Meetup
       </a>
       <ul class="nav left">
-        <li><a href="./about.html">About</a></li>
-        <li><a href="#">placeholder</a></li>
+        <li><a href="/about.html">About</a></li>
+        <!-- <li><a href="#">placeholder</a></li> -->
       </ul>
       <ul class="nav right">
         <% if current_user %>
-
           <li><img src=<%= current_user.avatar %> alt="" class="image-circle"></li>
           <li><%= link_to "logout", logout_path, method: 'delete' %></li>
         <% else %>

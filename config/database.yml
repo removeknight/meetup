@@ -51,4 +51,4 @@ production:
   <<: *default
   database: meetup_production
   username: meetup
-  password: <%= ENV['MEETUP_DATABASE_PASSWORD'] %>
+  password: 891976

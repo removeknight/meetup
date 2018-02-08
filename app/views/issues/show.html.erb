@@ -1,8 +1,10 @@
 <div class="issue-heading">
   <div class="container">
     <%= @issue.title %>
-    <%= link_to 'Destroy', issue_path(@issue), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %> 
-    <%= link_to 'edit', edit_issue_path(@issue), class: "btn btn-primary" %>
+    <% if current_user && current_user == @issue.user %>
+      <%= link_to 'Destroy', issue_path(@issue), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %> 
+      <%= link_to 'edit', edit_issue_path(@issue), class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
 <div class="container">
@@ -15,12 +17,16 @@
         <div class="heading">
           <h5 class="name"><a href="#"><%=  @issue.user.name %></a></h5>
         </div>
-        <%= @issue.content %>
+        <%= markdown @issue.content %>
       </div>
     </article>
     <% @comments.each do |c| %>
       <%= render partial: 'shared/comment', locals: {c: c} %>
     <% end %>
   </div>
-  <%= render partial: 'shared/comment_box'  %>
+  <% if current_user %>
+    <%= render partial: 'shared/comment_box'  %>
+  <% else %>
+    <%= link_to '登录后才可以评论哦', login_path %>
+  <% end %>
 </div>

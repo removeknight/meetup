@@ -11,7 +11,13 @@ class IssuesController < ApplicationController
   end
 
   def new
-  	@issue = Issue.new
+    if not current_user
+      flash[:notice] = "登录后才可以发布😯"
+      redirect_to :root
+      return
+    else
+      @issue = Issue.new
+    end
   end
 
   def create
