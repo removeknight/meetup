@@ -16,4 +16,8 @@
 /node_modules
 /yarn-error.log
 
+.gitignore
+
 .byebug_history
+secrects.yml
+/config/database.yml
