@@ -1,0 +1,44 @@
+<%= form_with scope: :article, local: true do |form| %>
+ <p>
+ 	<%= form.label :title %><br>
+ 	<%= form.text_field :title %>
+ </p>
+
+ <p>
+ 	<%= form.label :text %><br>
+ 	<%= form.text_area :text %>
+ </p>
+
+ <p>
+ 	<%= form.submit %>
+ </p>
+<% end %>
+
+<%= form_with scope: :article, url: articles_path, local: true do |form| %>
+
+<%= link_to 'show', article_path(article) %>
+
+
+validates :title, presence: true, length: {minimum: 5}
+
+if @article.errors.any?
+<div class="error_explanation">
+	<h2>
+		<%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:
+	</h2>
+	<ul>
+		<%= article.errors.full_message.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+
+<%= link_to 'destroy', article_path(article), method: : delete, data: {confirm: 'Are you sure'} 
+
+bin/rails generate model Comment commenter:string body:text article:references
+
+form_with(model: nil, scope: nil, format: nil, **options)
+
+
+
+
